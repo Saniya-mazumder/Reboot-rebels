@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Image Processing</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #b3ff27, #06a1fa);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #upload-container {
+            text-align: center;
+            background: linear-gradient(to right, #0ace14de, #0a6ee0c5);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 100px rgba(238, 234, 7, 0.979);
+        }
+s
+        h2 {
+            color: #ff9100;
+        }
+
+        input[type="file"] {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 5px solid #2395ffd5;
+            border-radius: 100px;
+            background-color: #07ecd963;
+            color: #f1e209ce;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #0c10f0;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="upload-container">
+        <h1>ML Image Processing</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="image1" accept="image/*" required>
+            <input type="file" name="image2" accept="image/*" required>
+        <button type="submit">Process Images</button>
+        </form>
+
+        <div id="custom-text">
+            <h3>Thank you for trusting us with your apparel.</h3>
+            <p>Explore this amazing world of colours and immerse into the journey of rocking the world with your fashion sense!</p>
+            <p>Don't worry, we will keep this a secret!</p>
+        </div>
+        {% if result %}
+            <h2>{{ result }}</h2>
+        {% endif %}
+    </div>
+    
+</body>
+</html>
